@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Sumzbite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar container">
+      <a class="brand" href="index.html"><span class="brand-logo">🥟</span><span>Sumzbite</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Buka menu">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="product.html">Product</a>
+        <a href="pembelian.html">Pembelian</a>
+        <a href="latar-belakang.html">Latar Belakang</a>
+        <a class="active" href="contact.html">Contact Us</a>
+        <a href="dashboard.html">Dashboard</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container page-title">
+        <div>
+          <span class="badge">Contact Us</span>
+          <h1>Hubungi Sumzbite</h1>
+          <p>Punya pertanyaan tentang produk, pemesanan, atau kerja sama? Silakan hubungi kami melalui kontak berikut.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container form-grid">
+        <aside class="info-card">
+          <span class="badge green">Informasi toko</span>
+          <h2 style="margin-top:14px">Kami siap membantu</h2>
+          <p>Gunakan informasi kontak di bawah ini untuk bertanya seputar menu, stok, atau pemesanan dimsum.</p>
+          <div class="contact-list">
+            <div class="contact-item">
+              <div class="contact-icon">💬</div>
+              <div><strong>WhatsApp</strong><p>+62 81802996537</p></div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">📍</div>
+              <div><strong>Alamat</strong><p>Pekanbaru, Riau</p></div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">⏰</div>
+              <div><strong>Jam buka</strong><p>Sedang Tutup</p></div>
+            </div>
+          </div>
+        </aside>
+
+        <div class="form-card">
+          <form id="contactForm">
+            <div class="form-group">
+              <label for="contactName">Nama</label>
+              <input class="form-control" id="contactName" type="text" placeholder="Nama kamu" required />
+            </div>
+            <div class="form-group">
+              <label for="contactEmail">Email</label>
+              <input class="form-control" id="contactEmail" type="email" placeholder="email@example.com" />
+            </div>
+            <div class="form-group">
+              <label for="contactMessage">Pesan</label>
+              <textarea class="form-control" id="contactMessage" rows="6" placeholder="Tulis pesan kamu" required></textarea>
+            </div>
+            <button class="btn primary" type="submit">Kirim Pesan</button>
+            <div class="alert" id="contactAlert"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>© 2026 Sumzbite. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="product.html">Product</a>
+        <a href="pembelian.html">Pembelian</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
