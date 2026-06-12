@@ -40,6 +40,33 @@ function formatPrintedDate() {
   }).format(new Date());
 }
 
+function formatSignatureDate() {
+  return new Intl.DateTimeFormat('id-ID', {
+    dateStyle: 'long'
+  }).format(new Date());
+}
+
+function validateSignatureBeforePrint() {
+  const name = document.getElementById('signatureName')?.value.trim();
+  const role = document.getElementById('signatureRole')?.value.trim();
+  const place = document.getElementById('signaturePlace')?.value.trim();
+  const confirmed = document.getElementById('signatureConfirm')?.checked;
+  const alertBox = document.getElementById('signatureAlert');
+
+  if (!name || !role || !place || !confirmed) {
+    showAlert(alertBox, 'Lengkapi nama penanda tangan, jabatan, tempat, dan centang validasi sebelum mencetak PDF.', 'error');
+    document.getElementById('signatureName')?.focus();
+    return false;
+  }
+
+  document.getElementById('printSignatureName').textContent = name;
+  document.getElementById('printSignatureRole').textContent = role;
+  document.getElementById('printSignaturePlace').textContent = place;
+  document.getElementById('printSignatureDate').textContent = formatSignatureDate();
+  showAlert(alertBox, 'Validasi tanda tangan berhasil. Laporan siap dicetak.', 'success');
+  return true;
+}
+
 function todayInputValue() {
   return new Date().toISOString().slice(0, 10);
 }
@@ -232,6 +259,7 @@ function setupReportFilter() {
   });
   loadButton?.addEventListener('click', loadReport);
   printButton?.addEventListener('click', () => {
+    if (!validateSignatureBeforePrint()) return;
     document.getElementById('printedAt').textContent = formatPrintedDate();
     window.print();
   });
