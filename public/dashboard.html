@@ -144,6 +144,26 @@
           <button class="btn secondary" type="button" id="loadReportBtn">Tampilkan Laporan</button>
         </div>
 
+        <div class="signature-validation no-print">
+          <div class="form-group">
+            <label for="signatureName">Nama Penanda Tangan</label>
+            <input class="form-control" type="text" id="signatureName" placeholder="Contoh: Willey Pranata" />
+          </div>
+          <div class="form-group">
+            <label for="signatureRole">Jabatan</label>
+            <input class="form-control" type="text" id="signatureRole" placeholder="Contoh: Owner / Admin Sumzbite" />
+          </div>
+          <div class="form-group">
+            <label for="signaturePlace">Tempat</label>
+            <input class="form-control" type="text" id="signaturePlace" placeholder="Contoh: Pekanbaru" />
+          </div>
+          <label class="signature-check">
+            <input type="checkbox" id="signatureConfirm" />
+            <span>Saya menyatakan laporan sudah diperiksa dan siap ditandatangani.</span>
+          </label>
+          <div class="alert" id="signatureAlert"></div>
+        </div>
+
         <div class="print-area" id="printArea">
           <div class="report-title">
             <div>
@@ -175,6 +195,16 @@
             </thead>
             <tbody id="reportOrders"></tbody>
           </table>
+
+          <div class="signature-area">
+            <div></div>
+            <div class="signature-box">
+              <p><span id="printSignaturePlace">-</span>, <span id="printSignatureDate">-</span></p>
+              <p id="printSignatureRole">Penanggung Jawab</p>
+              <div class="signature-line"></div>
+              <strong id="printSignatureName">-</strong>
+            </div>
+          </div>
         </div>
       </section>
     </main>
